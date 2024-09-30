@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>funny</title>
+</head>
+<body>
+<button id="showButton" onclick="showElementAndPlaySound()">нажми</button>
+
+<audio id="audio" src="music.mp3"></audio>
+
+<div id="hiddenElement">
+    <a href="https://www.youtube.com/@limonan">
+        <img src="https://cdn.discordapp.com/attachments/1151201472063754310/1289977047984378038/kit_s_na_bluedin.gif?ex=66fc19be&is=66fac83e&hm=39bf833923a5331da894bb23e1f8bf08d4b2cafef2442c17aa33eb24462818eb&" width="800" height="600" alt="кит">
+    </a>
+</div>
+
+<script>
+    function showElementAndPlaySound() {
+        let audio = document.getElementById('audio');
+        let hiddenElement = document.getElementById('hiddenElement');
+        let button = document.getElementById('showButton');
+        button.style.display = 'none';
+
+        hiddenElement.style.display = 'block'; // Показать элемент
+        audio.play(); // Воспроизвести звук
+        setTimeout(function() {
+            audio.pause();
+            audio.currentTime = 0; // Вернуть воспроизведение в начало
+        }, 13000); // 10000 миллисекунд = 10 секунд
+    }
+</script>
+</body>
+</html>
